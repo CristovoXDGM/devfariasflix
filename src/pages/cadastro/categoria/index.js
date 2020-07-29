@@ -7,10 +7,26 @@ import { Link } from 'react-router-dom';
 function CadastroCategoria() {
     return (
         <PageDefault>
-            <h1> Cadstro de Categoria</h1>
-            <Link to="/cadastro/video" >
-                Cadastrar Video
-            </Link>
+            <h1>Cadastro de Categoria</h1>
+
+            <form>
+
+                <label>
+                    Nome da Categoria:
+          <input
+                        type="text"
+                    />
+                </label>
+
+                <button>
+                    Cadastrar
+        </button>
+            </form>
+
+
+            <Link to="/">
+                Ir para home
+      </Link>
         </PageDefault>
     );
 }
