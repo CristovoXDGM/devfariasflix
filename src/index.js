@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom';
 import CadastroVideo from './pages/cadastro/video';
 import CadastroCategoria from './pages/cadastro/categoria';
+import ErrorPage from './pages/errorpage';
 
 ReactDOM.render(
   <Router>
@@ -19,7 +20,7 @@ ReactDOM.render(
       <Route exact path={ROUTESPath.HOMEROUTE} component={App} />
       <Route exact path={ROUTESPath.CADASTROVIDEO} component={CadastroVideo} />
       <Route exact path={ROUTESPath.CADASTROCATEGORIA} component={CadastroCategoria} />
-      <Route component={() => <div>Erro 404</div>} />
+      <Route component={ErrorPage} />
     </Switch>
   </Router>
   ,
