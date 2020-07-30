@@ -6,12 +6,17 @@ import { Link } from 'react-router-dom';
 
 const Errodiv = styled.div`
 
-    min-height:100vh;
-    place-items:center ;
+    min-height:100%;
+    position:fixed;
+    top:0;
+    right:0;
+    left: 0;
+    bottom:0;
     background-color:#011627;
     flex:1;
     display:flexbox;
     align-items:center;
+
     justify-content:center;
   
 `;
@@ -39,18 +44,17 @@ const LinkToHome = styled.a`
 
 function ErrorPage() {
     return (
-        <main  >
-            <Errodiv>
-                <img alt="ErroImage" src={ErroImage} style={{ height: 150, color: "#F71735" }} />
-                <br></br>
-                <LinkToHome as={Link} to="/"  >
-                    Aperta aqui para volta para o Inicio!!
-                </LinkToHome>
-            </Errodiv>
 
-        </main>
+        <Errodiv>
+            <img alt="ErroImage" src={ErroImage} style={{ height: 150, color: "#F71735" }} />
+            <br></br>
+            <LinkToHome as={Link} to="/"  >
+                Aperta aqui para volta para o Inicio!!
+                </LinkToHome>
+        </Errodiv>
+
 
     );
 }
 
-export default ErrorPage
+export default ErrorPage;
