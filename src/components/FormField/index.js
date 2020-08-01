@@ -49,14 +49,14 @@ const InputCadadatrar = styled.input`
     transform: scale(.6) translateY(-10px);
   }
   ${({ value }) => {
-        const hasValue = value.length > 0;
-        return hasValue && css`
+    const hasValue = value.length > 0;
+    return hasValue && css`
         &:not([type='color']) + ${Label.Text} {
           transform: scale(.6) translateY(-10px);
         }
       `;
-    }
-    }
+  }
+  }
   
 `;
 
@@ -87,14 +87,14 @@ const InputTextArea = styled.textarea`
     transform: scale(.6) translateY(-10px);
   }
   ${({ value }) => {
-        const hasValue = value.length > 0;
-        return hasValue && css`
+    const hasValue = value.length > 0;
+    return hasValue && css`
         &:not([type='color']) + ${Label.Text} {
           transform: scale(.6) translateY(-10px);
         }
       `;
-    }
-    }
+  }
+  }
 `;
 
 
@@ -110,48 +110,48 @@ const Wrapper = styled.div`
 `;
 
 function FormField({
-    value, onChange, type, name, label, isTextArea,
+  value, onChange, type, name, label, isTextArea,
 }) {
-    const fieldId = `id_${name}`;
-    return (
+  const fieldId = `id_${name}`;
+  return (
 
-        isTextArea ? (
-            <Wrapper style={{ paddingTop: 20 }}>
-                <Label>
-                    <InputTextArea
+    isTextArea ? (
+      <Wrapper style={{ paddingTop: 20 }}>
+        <Label>
+          <InputTextArea
 
-                        type={type}
-                        value={value}
-                        name={name}
-                        onChange={onChange}
+            type={type}
+            value={value}
+            name={name}
+            onChange={onChange}
 
-                    />
-                    <Label.Text>
-                        {label}
+          />
+          <Label.Text>
+            {label}
                             :
                             </Label.Text>
-                </Label>
-            </Wrapper>
-        )
-            : (
-                <Wrapper style={{ paddingTop: 20 }}>
-                    <Label>
-                        <InputCadadatrar
+        </Label>
+      </Wrapper>
+    )
+      : (
+        <Wrapper style={{ paddingTop: 20 }}>
+          <Label>
+            <InputCadadatrar
 
-                            type={type}
-                            value={value}
-                            name={name}
-                            onChange={onChange}
-                        />
-                        <Label.Text>
-                            {label}
+              type={type}
+              value={value}
+              name={name}
+              onChange={onChange}
+            />
+            <Label.Text>
+              {label}
                             :
                             </Label.Text>
-                    </Label>
-                </Wrapper>
-            )
+          </Label>
+        </Wrapper>
+      )
 
-    );
+  );
 }
 
 

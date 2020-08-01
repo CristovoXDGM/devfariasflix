@@ -96,7 +96,7 @@ function CadastroCategoria() {
                 <FormField
                     label="Nome da Categoria"
                     name='nome'
-                    value={values.titulo}
+                    value={values.nome}
                     onChange={handleChange}
                     type="text"
                     isTextArea={false}
