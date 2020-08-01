@@ -40,6 +40,7 @@ function CadastroCategoria() {
     const getUrlData = async () => {
 
 
+
         try {
             const result = await api.get(URL);
             // console.log(result.data);
