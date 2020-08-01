@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -34,6 +34,31 @@ function CadastroCategoria() {
     const [categorias, setCategorias] = useState([]);
     const [values, setValues] = useState(valoresIniciais);
 
+
+    const URL = "categorias/";
+
+    const getUrlData = async () => {
+
+
+        try {
+            const result = await api.get(URL);
+            // console.log(result.data);
+            setCategorias([
+                ...result.data
+            ]);
+            console.log(`[categorias] ${categorias}`)
+        } catch (error) {
+
+        }
+
+
+    }
+
+    useEffect(() => {
+        getUrlData();
+    }, []);
+
+
     const addCategory = (event) => {
         event.preventDefault();
         setCategorias([
@@ -61,7 +86,7 @@ function CadastroCategoria() {
     return (
         <PageDefault>
             <h1 style={{ textAlign: "center" }} >
-                Cadastro de Categoria: {values.nome}
+                Cadastro de Categoria: {values.titulo}
             </h1>
 
             <form onSubmit={(e) => addCategory(e)} >
@@ -69,7 +94,7 @@ function CadastroCategoria() {
                 <FormField
                     label="Nome da Categoria"
                     name='nome'
-                    value={values.nome}
+                    value={values.titulo}
                     onChange={handleChange}
                     type="text"
                     isTextArea={false}
@@ -100,7 +125,7 @@ function CadastroCategoria() {
             <ul>
                 {
                     categorias.map((category, index) => {
-                        return <li key={`${category.nome}` + index} >{category.nome}</li>
+                        return <li key={`${category.titulo}` + index} >{category.titulo}</li>
                     })
                 }
             </ul>
