@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import FormField from '../../../components/FormField';
+import api from '../../../services/api';
 
 const ButtonSubmitForm = styled.button`
  
@@ -34,6 +35,29 @@ function CadastroCategoria() {
     const [categorias, setCategorias] = useState([]);
     const [values, setValues] = useState(valoresIniciais);
 
+    const URL = "categorias/";
+
+    const getUrlData = async () => {
+
+
+        try {
+            const result = await api.get(URL);
+            // console.log(result.data);
+            setCategorias([
+                ...result.data
+            ]);
+            console.log(`[categorias] ${categorias}`)
+        } catch (error) {
+
+        }
+
+
+    }
+
+    useEffect(() => {
+        getUrlData();
+    }, []);
+
     const addCategory = (event) => {
         event.preventDefault();
         setCategorias([
@@ -57,6 +81,8 @@ function CadastroCategoria() {
             changes.target.value
         );
     }
+
+
 
     return (
         <PageDefault>
@@ -97,10 +123,12 @@ function CadastroCategoria() {
                 </ButtonSubmitForm>
             </form>
 
+
+
             <ul>
                 {
                     categorias.map((category, index) => {
-                        return <li key={`${category.nome}` + index} >{category.nome}</li>
+                        return <li key={`${category.titulo}` + index} >{category.titulo}</li>
                     })
                 }
             </ul>
