@@ -88,7 +88,7 @@ function CadastroCategoria() {
     return (
         <PageDefault>
             <h1 style={{ textAlign: "center" }} >
-                Cadastro de Categoria: {values.titulo}
+                Cadastro de Categoria: {values.nome}
             </h1>
 
             <form onSubmit={(e) => addCategory(e)} >
