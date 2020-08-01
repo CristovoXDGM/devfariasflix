@@ -3,6 +3,7 @@ import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import FormField from '../../../components/FormField';
+import api from '../../../services/api';
 
 const ButtonSubmitForm = styled.button`
  
@@ -38,6 +39,7 @@ function CadastroCategoria() {
     const URL = "categorias/";
 
     const getUrlData = async () => {
+
 
 
         try {
