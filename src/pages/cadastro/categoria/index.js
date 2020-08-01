@@ -3,6 +3,7 @@ import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import FormField from '../../../components/FormField';
+import api from '../../../services/api';
 
 const ButtonSubmitForm = styled.button`
  
@@ -34,7 +35,6 @@ function CadastroCategoria() {
     const [categorias, setCategorias] = useState([]);
     const [values, setValues] = useState(valoresIniciais);
 
-
     const URL = "categorias/";
 
     const getUrlData = async () => {
@@ -57,7 +57,6 @@ function CadastroCategoria() {
     useEffect(() => {
         getUrlData();
     }, []);
-
 
     const addCategory = (event) => {
         event.preventDefault();
@@ -82,6 +81,8 @@ function CadastroCategoria() {
             changes.target.value
         );
     }
+
+
 
     return (
         <PageDefault>
@@ -121,6 +122,8 @@ function CadastroCategoria() {
                     Salvar
                 </ButtonSubmitForm>
             </form>
+
+
 
             <ul>
                 {
