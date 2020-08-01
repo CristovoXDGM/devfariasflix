@@ -19,7 +19,7 @@
   "scripts": {
     "server": "node server.js",
     "dev": "react-scripts start",
-    "start": "npm run server",
+    "start": "json-server --watch db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
