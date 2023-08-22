@@ -2,16 +2,16 @@
   "categorias": [
     {
       "titulo": "Front End",
-      "link": "https://www.alura.com.br/formacao-front-end",
+      "link": "https://cristovaoresume.netlify.app/",
       "cor": "#6BD1FF",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "Fale comigo",
+        "url": "https://cristovaofarias.my.canva.site/"
       },
       "videos": [
         {
-          "titulo": "Ambiente de Desenvolvimento produtivo - Flutter",
-          "url": "https://www.youtube.com/watch?v=D1lPdt0xZs4"
+          "titulo": "Responsividade no Flutter - Flutterando Meetup | 33º Edição |",
+          "url": "https://www.youtube.com/watch?v=UA8phXrg_6c"
         },
         {
           "titulo": "SEO com React",
